@@ -37,7 +37,7 @@ class UpdateContent extends React.Component { // crUd
                             placeholder='title'
                             value={this.state.title} // 현재는 state를 변경하지 못하고 받아올 수만 있는 상태(read only), 따라서 아래와 같이
                             onChange={this.inputFormHandler}
-                                // console.log(e.target.value);
+                            // console.log(e.target.value);
                         ></input>
                     </p>
                     <p>
@@ -46,7 +46,7 @@ class UpdateContent extends React.Component { // crUd
                             placeholder='description'
                             value={this.state.description}
                             onChange={this.inputFormHandler}
-                                // console.log(e.target.value);
+                            // console.log(e.target.value);
                         ></teatarea>
                     </p>
                     <p>

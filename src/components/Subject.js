@@ -4,15 +4,16 @@ import './App.css';
 class Subject extends React.Component { // 주제!
     render() { 
     // console.log('Subject render');
-               // component 안에는 여러가지 내용들이 들어갈 수 있지만, render 메소드는 반드시 필요하다
-               // function render() //메소드이지만 class 안의 함수는 function 생략 가능하다
+    // component 안에는 여러가지 내용들이 들어갈 수 있지만, render 메소드는 반드시 필요하다
+    // function render() //메소드이지만 class 안의 함수는 function 생략 가능하다
         return (
             <header>
-                <h1><a href="/" onClick={function(e) {
-                    e.preventDefault();
-                    this.props.onChangePage() // props로 전달된 함수가 실행() 
+                <h1><a href="/" onClick={function(e) { // 할당된 라우터 주소가 없는 가장 기본 페이지, onClick을 하면
+                    e.preventDefault(); // 기본 기능 방지
+                    this.props.onChangePage() // onChangePage 함수를 props로 전달받아 실행 
                 }.bind(this)}>{this.props.title}</a></h1>
                 {this.props.subTitle}
+                {/* title과 subTitle 표시 */}
             </header>
             // 컴포넌트는 하나의 최상위 태그만 사용해야 한다, 여기서는 header 태그
         );
@@ -24,7 +25,7 @@ class Subject extends React.Component { // 주제!
   // props, state, event가 함께 dynamic을 만든다
 
   // Subject의 title 클릭 시, Content에 Subject의 subTitle의 값이 출력되게 만들기
-  // TOC의 title 클릭 시, Content에 해당 tiitle의 contents의 값이 출력되게 만들기
+  // TOC의 title 클릭 시, Content에 해당 title의 contents의 값이 출력되게 만들기
 
   // props나 state가 바뀌면 state를 가지고 있는 component(App)의 render 함수가 다시 호출 된다
   // 그 render 함수 하위에 있는 component들(Subject, TOC, Content) 각자가 가지고 있는 render 함수들도 다시 호출 된다

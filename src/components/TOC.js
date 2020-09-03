@@ -7,7 +7,7 @@ class TOC extends React.Component { // Table of Content 목차!
         //  newProps.data, // 바뀐 데이터
         //  this.props.data // 원본(현재) 데이터
         //  )
-        // 이 기능 사용하려면 https://youtu.be/SkTUocMjXTg 보기
+        // 이 기능 사용하려면 https://youtu.be/SkTUocMjXTg 보기 // 꼭 필요한 기능은 아니다
         if (this.props.data === newProps.data) {
             return false; // render 함수 비 호출
         }
@@ -22,12 +22,13 @@ class TOC extends React.Component { // Table of Content 목차!
             list.push(
                 <li key={data[i].id}>
                     <a href={'/contents/'+data[i].id}>
-                    onClick={function(id, e) {
+                        onClick={function(id, e) {
                         // debugger; // 이 것을 통해 해당 태그(여기서는 e, 즉 이벤트 객체)의 구성 요소, 가지고 있는 메소드 등을 확인할 수 있다
                         e.preventDefault();
-                        this.props.onChangePage(e.target.dataset.id); // 여기서의 props는 App의 render()의 TOC 태그 안의 함수
-                                                                      // 이 함수를 여기서 실행()시킨다
-                                                                      // 여기서 e 태그가 가진 target 메소드는 e가 속한 태그(여기서는 a)를 가리킨다
+                        this.props.onChangePage(e.target.dataset.id); 
+                        // 여기서의 props는 App의 render()의 TOC 태그 안의 함수
+                        // 이 함수를 여기서 실행()시킨다
+                        // 여기서 e 태그가 가진 target 메소드는 e가 속한 태그(여기서는 a)를 가리킨다
                     }.bind(this, data[i].id)}
                     {data[i].title}
                     </a>
